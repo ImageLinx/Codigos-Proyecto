@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sube y comparte tus imágenes</title>
+<link rel="stylesheet" href="hoja_estilos.css">
+<style>
+.link-text {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-top: 20px;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="upload-container">
+  <h1 id="title">¡Sube y comparte imágenes!</h1>
+  <p id="description">Pulsa el botón, selecciona una imagen y obtén un enlace para compartir.</p>
+  <form id="upload-form" action="funcionalidades.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" id="file-input" accept="image/*" class="hidden">
+    <label for="file-input" class="upload-btn">Selecciona una imagen</label>
+    <input type="submit" name="submit" id="submit-btn" class="hidden">
+  </form>
+</div>
+
+<script>
+document.getElementById('file-input').addEventListener('change', function() {
+  document.getElementById('submit-btn').click();
+});
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const uploaded = urlParams.get('uploaded');
+  const file = urlParams.get('file');
+
+  if (uploaded && file) {
+    const title = document.getElementById('title');
+    const description = document.getElementById('description');
+    const uploadForm = document.getElementById('upload-form');
+    const fileLink = decodeURIComponent(file);
+
+    title.textContent = 'Imagen Subida';
+    description.textContent = fileLink;
+    uploadForm.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
