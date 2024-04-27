@@ -90,7 +90,6 @@ Crea un directorio para almacenar los archivos de configuración de las zonas.
 
 ```bash
 sudo mkdir /etc/bind/zones
-sudo chown bind:bind /etc/bind/zones
 ```
 ### Configurar named.conf.options
 Configura las opciones principales de BIND:
@@ -239,16 +238,20 @@ sudo chmod -R 755 /var/www/html/ImageLinx.lan
 ### Creación de Archivos de la Aplicación Web
 Para configurar la aplicación web en el servidor, necesitarás crear los siguientes archivos dentro del directorio ImageLinx.lan. Estos archivos son esenciales para el funcionamiento de la aplicación:
 
-### Archivos Necesarios
+#### Archivos Necesarios
 
-index.html - Define la estructura de la página.
-Descargar index.html
-hoja_estilos.css - Contiene los estilos visuales para la aplicación.
-Descargar hoja_estilos.css
-funcionalidades.php - Encargado del procesamiento del lado del servidor.
-(https://github.com/ImageLinx/ImageLinx/blob/main/Directorio_para_códigos/funcionalidades.php)
+**index.html - Define la estructura de la página.**
+Ver código HTML
+[Ver código HTML](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/index.html)
 
-Imagen_de_fondo.webp - Imagen de fondo utilizada en la aplicación (opcional, elige tu propia imagen).
+**hoja_estilos.css - Contiene los estilos visuales para la aplicación.**
+[Ver código CSS](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/hoja_estilos.css)
+
+**funcionalidades.php - Encargado del procesamiento del lado del servidor.**
+[Ver código PHP](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/funcionalidades.php)
+
+
+**Imagen_de_fondo.webp - Imagen de fondo utilizada en la aplicación (opcional, elige tu propia imagen).**
 Asegúrate de colocar el archivo Imagen_de_fondo.webp en el mismo directorio.
 
 ### Automatización de la Gestión de Archivos
@@ -264,7 +267,7 @@ Añade la siguiente línea para ejecutar la tarea cada hora, lo cual es más ade
 0 * * * * find /var/www/html/ImageLinx.lan/uploads -type f -mtime +1 -exec rm {} \;
 ```
 
-Para un entorno real se debería ajustar el tiempo de ejecución de la tarea, ya que sobrecargaría el servidor innecesariamente si está en funcionamiento contínuo. Por ejemplo poner una revisión cada 24 horas.
+*Para un entorno real se debería ajustar el tiempo de ejecución de la tarea, ya que sobrecargaría el servidor innecesariamente si está en funcionamiento contínuo. Por ejemplo poner una revisión cada 24 horas.*
 
 ### Adición y Configuración de los Módulos Info y Status en Apache2
 Módulo Info
