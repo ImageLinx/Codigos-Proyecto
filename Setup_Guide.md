@@ -230,7 +230,7 @@ sudo apt install php libapache2-mod-php
 ```
 
 ### Creación y Configuración del Directorio del Servidor Web para ImageLinx.lan
-### Creación del Directorio
+### Creación del Directorio principal
 Crea el directorio principal para la aplicación web dentro del directorio raíz de Apache2 usando el siguiente comando:
 
 ```bash
@@ -244,6 +244,24 @@ Configura los permisos del directorio para asegurar que el servidor web tenga lo
 sudo chown -R www-data:www-data /var/www/html/ImageLinx.lan
 sudo chmod -R 755 /var/www/html/ImageLinx.lan
 ```
+### Creación del Directorio de Subidas (Uploads)
+
+Para permitir que los usuarios suban imágenes a la aplicación, es necesario crear un directorio de subidas dentro del directorio de la aplicación web. Este directorio almacenará las imágenes cargadas por los usuarios.
+
+```bash
+sudo mkdir /var/www/html/ImageLinx.lan/uploads
+```
+
+Establecimiento de Permisos para el Directorio de Subidas
+
+Es crucial que el servidor web tenga permisos de escritura en el directorio de subidas para permitir la carga de archivos. A continuación, se configuran los permisos adecuados para este directorio:
+
+```bash
+sudo chown -R www-data:www-data /var/www/html/ImageLinx.lan/uploads
+sudo chmod -R 775 /var/www/html/ImageLinx.lan/uploads
+```
+Estos comandos aseguran que el usuario bajo el cual se ejecuta el servidor web, www-data, tenga los permisos necesarios para escribir en el directorio de subidas, mientras que otros usuarios del grupo tienen permisos de lectura y ejecución.
+
 #### ¿Por qué usar el usuario www-data?/
 
 En los sistemas basados en Debian, como Ubuntu, www-data es el usuario predeterminado bajo el cual se ejecutan el servidor web Apache y otros servidores web. Usar este usuario tiene varias ventajas de seguridad y practicidad:
