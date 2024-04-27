@@ -234,6 +234,17 @@ Configura los permisos del directorio para asegurar que el servidor web tenga lo
 sudo chown -R www-data:www-data /var/www/html/ImageLinx.lan
 sudo chmod -R 755 /var/www/html/ImageLinx.lan
 ```
+**¿Por qué usar el usuario www-data?/**
+
+En los sistemas basados en Debian, como Ubuntu, www-data es el usuario predeterminado bajo el cual se ejecutan el servidor web Apache y otros servidores web. Usar este usuario tiene varias ventajas de seguridad y practicidad:
+
+    Seguridad Mejorada: Al operar los servicios web bajo www-data, limitamos los permisos de estos procesos exclusivamente a las operaciones necesarias. Esto significa que si un atacante compromete el servidor web, sus capacidades para realizar cambios en el sistema estarán restringidas a lo que www-data puede hacer. De esta forma, se reduce el riesgo de daños mayores al sistema.
+
+    Separación de Privilegios: Usar www-data ayuda a mantener una clara separación de privilegios en el sistema. Al no ejecutar el servidor web como root o como un usuario con amplios privilegios administrativos, se asegura que las actividades del servidor web no puedan interferir con otras operaciones críticas del sistema.
+
+    Gestión Simplificada: Dado que www-data es un estándar en muchos sistemas para la ejecución de servidores web, usar este usuario simplifica la configuración y la administración del sistema, ya que muchos ejemplos y documentación presuponen su uso.
+
+Establecer los permisos adecuadamente no solo ayuda a asegurar la funcionalidad del sitio web, sino que también juega un papel crucial en la protección del servidor contra actividades maliciosas o no autorizadas. Asegúrate de siempre revisar y ajustar los permisos según las necesidades específicas de tu aplicación y entorno de hosting.
 
 ### Creación de Archivos de la Aplicación Web
 Para configurar la aplicación web en el servidor, necesitarás crear los siguientes archivos dentro del directorio ImageLinx.lan. Estos archivos son esenciales para el funcionamiento de la aplicación:
