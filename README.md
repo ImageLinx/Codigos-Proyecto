@@ -19,7 +19,7 @@ Antes de comenzar, necesitarás:
 
 ### Instalación
 
-Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuración Detallada](Setup_Guide.md), que te proporcionará todos los pasos necesarios.
+Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuración Detallada](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Setup_Guide.md), que te proporcionará todos los pasos necesarios.
 
 ## Uso de la Plataforma
 
