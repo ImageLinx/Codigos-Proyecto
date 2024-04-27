@@ -33,6 +33,16 @@ Agrega o edita la línea de INTERFACESv4 para especificar tu interfaz de red, co
 ```plaintext
 INTERFACESv4="enp0s3"
 ```
+**Soporte para IPv6**
+
+En este proyecto, se ha configurado el servidor DHCP para operar con direcciones IPv4, que es el protocolo de Internet más utilizado. Sin embargo, si deseas habilitar el soporte para IPv6, que es la versión más reciente del protocolo de Internet, puedes hacerlo configurando también las interfaces para IPv6.
+
+Para agregar soporte IPv6, necesitarás editar la línea INTERFACESv6 en el mismo archivo de configuración:
+```plaintext
+INTERFACESv6="enp0s3"
+```
+*Se podría desviar las conexiones IPv6 e IPv4 por interfaces distintas si se desea*
+
 ### Configurar dhcpd.conf
 Ahora configura el archivo principal de DHCP para definir el dominio, los servidores DNS, el tiempo de concesión de las direcciones IP y las subredes.
 
