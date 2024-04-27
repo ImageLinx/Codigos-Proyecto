@@ -159,7 +159,7 @@ sudo touch /etc/bind/zones/1.168.192.in-addr.arpa.db
 ```bash
 sudo nano /etc/bind/zones/ImageLinx.lan.db
 ```
-Incluye lo siguiente, asegurándote de incrementar el número de serie cada vez que edites el archivo:
+Incluye lo siguiente, asegurándote de incrementar el número de serie en una unidad cada vez que edites el archivo (donde pone Serial):
 
 ```plaintext
 $TTL    604800
