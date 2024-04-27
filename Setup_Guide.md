@@ -472,8 +472,9 @@ Donde admin es el usuario y 192.168.1.100 es la dirección IP del servidor DNS, 
 Gestión Centralizada: Este método permite administrar todos los servidores desde un único punto, simplificando las tareas de administración y mantenimiento. La consolidación de la administración en una única máquina de gestión centralizada reduce la complejidad y mejora la eficiencia operativa.
 Seguridad de las Conexiones: Asegúrate de que todas las conexiones SSH estén protegidas mediante claves de cifrado fuertes y, si es posible, configura autenticación basada en claves en lugar de contraseñas para aumentar la seguridad.
 ## Recomendaciones Finales
-Mantenimiento Regular: Realiza comprobaciones y actualizaciones regulares en todos los servidores para garantizar que el software esté actualizado y que no haya vulnerabilidades de seguridad.
-Monitoreo Continuo: Implementa soluciones de monitoreo para seguir el estado y rendimiento de todos los servidores centralmente, lo cual te permitirá responder rápidamente a cualquier problema que pueda surgir.
+- Mantenimiento Regular: Realiza comprobaciones y actualizaciones regulares en todos los servidores para garantizar que el software esté actualizado y que no haya vulnerabilidades de seguridad.
+
+- Monitoreo Continuo: Implementa soluciones de monitoreo para seguir el estado y rendimiento de todos los servidores centralmente, lo cual te permitirá responder rápidamente a cualquier problema que pueda surgir.
 
 
 
