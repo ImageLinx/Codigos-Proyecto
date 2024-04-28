@@ -415,6 +415,8 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ss
 
 ```
 
+**En este último comando para generar el certificado y la clave privada se deben completar los campos con los datos propios**
+
 ### Copia de Seguridad del Archivo de Configuración SSL
 Antes de realizar cambios en el archivo de configuración SSL, es una buena práctica realizar una copia de seguridad:
 
