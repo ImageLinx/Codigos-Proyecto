@@ -142,6 +142,14 @@ options {
 
 - **allow-query { internals; }:** Restringe quién puede hacer consultas DNS al servidor a los dispositivos definidos en la ACL internals. Esto significa que solo los dispositivos en la red local (192.168.1.0/24) y el propio servidor DNS (127.0.0.1) pueden hacer consultas.
 
+#### Configuración del Firewall para BIND9
+
+Asegúrate de que el firewall permite las peticiones de DNS para que BIND9 pueda operar correctamente:
+
+```bash
+sudo ufw allow bind9
+```
+
 ### Configuración de Zonas en BIND
 Define las zonas de DNS para tu dominio y crea los archivos de configuración de las zonas.
 
