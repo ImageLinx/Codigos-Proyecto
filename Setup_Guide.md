@@ -126,6 +126,22 @@ options {
   allow-query { internals; };
 }
 ```
+-ACL "internals": Define una lista de control de acceso llamada internals.
+
+-127.0.0.1: Incluye la dirección IP de loopback (localhost), lo que permite que el propio servidor DNS realice consultas a sí mismo.
+
+-192.168.1.0/24: Especifica una red entera, permitiendo a todas las direcciones IP dentro del rango de la subred 192.168.1.0 a 192.168.1.255 realizar consultas DNS. Esto es comúnmente usado para permitir que todos los dispositivos dentro de una red local hagan uso del servidor DNS
+
+-directory "/var/cache/bind": Establece el directorio donde BIND almacena sus archivos de caché y otros datos relacionados. Este es el directorio predeterminado para la caché en la mayoría de las instalaciones de BIND.
+
+-forwarders { 8.8.8.8; 8.8.4.4; }: Define servidores DNS "forwarders" o reenviadores. Cuando el servidor DNS local no puede resolver un nombre de dominio por sí mismo, reenvía la consulta a estos servidores DNS externos. Aquí, 8.8.8.8 y 8.8.4.4 son servidores DNS públicos proporcionados por Google, conocidos por su fiabilidad y velocidad.
+
+-dnssec-validation auto: Habilita la validación DNSSEC, que es un conjunto de extensiones de seguridad para asegurar las respuestas a las consultas DNS. La opción auto configura el servidor para que automáticamente gestione y valide las firmas de DNSSEC, mejorando la seguridad contra ataques de envenenamiento de caché y otros tipos de falsificación DNS.
+
+-listen-on { 192.168.1.199; }: Configura el servidor DNS para escuchar consultas en la interfaz de red con la dirección IP 192.168.1.199. Esto limita las respuestas del servidor DNS a solicitudes recibidas a través de esta dirección IP específica.
+
+-allow-query { internals; }: Restringe quién puede hacer consultas DNS al servidor a los dispositivos definidos en la ACL internals. Esto significa que solo los dispositivos en la red local (192.168.1.0/24) y el propio servidor DNS (127.0.0.1) pueden hacer consultas.
+
 ### Configuración de Zonas en BIND
 Define las zonas de DNS para tu dominio y crea los archivos de configuración de las zonas.
 
