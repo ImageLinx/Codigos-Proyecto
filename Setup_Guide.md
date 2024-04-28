@@ -489,6 +489,88 @@ ssh admin@192.168.1.100
 Donde admin es el usuario y 192.168.1.100 es la dirección IP del servidor DNS, DHCP o web.
 Gestión Centralizada: Este método permite administrar todos los servidores desde un único punto, simplificando las tareas de administración y mantenimiento. La consolidación de la administración en una única máquina de gestión centralizada reduce la complejidad y mejora la eficiencia operativa.
 Seguridad de las Conexiones: Asegúrate de que todas las conexiones SSH estén protegidas mediante claves de cifrado fuertes y, si es posible, configura autenticación basada en claves en lugar de contraseñas para aumentar la seguridad.
+
+# Pruebas
+
+## Objetivo General
+Verificar y asegurar que todas las configuraciones y funcionalidades del sistema de intercambio de imágenes funcionen correctamente en términos de rendimiento, seguridad y usabilidad.
+
+### Comprobación de Interfaces de Red
+#### Descripción
+Validar que las configuraciones de red, tanto de servidores como de clientes, se adhieran a las especificaciones de IPs dinámicas y estáticas del servidor DHCP.
+
+#### Procedimiento
+- **Paso 1:** Acceder a cada servidor y máquina cliente.
+- **Paso 2:** Ejecutar el siguiente comando para revisar las direcciones IP asignadas:
+  ```bash
+  ip a
+  ```
+
+    Paso 3: Verificar que las direcciones IP estáticas y dinámicas asignadas coincidan con las configuraciones previstas.
+
+#### Resultados Esperados
+
+Cada servidor y cliente debe mostrar las direcciones IP conforme a la configuración de DHCP especificada, sin discrepancias.
+## Evaluación de la Resolución DNS
+### Descripción
+
+Comprobar la capacidad del servidor DNS para resolver nombres de dominio tanto internamente como hacia el exterior.
+#### Procedimiento
+
+    Paso 1: Utilizar el comando dig en una máquina cliente para resolver un dominio interno y uno externo, como se muestra a continuación:
+
+    ```bash
+
+    dig www.example.com
+    dig google.com
+    ```
+
+    Paso 2: Observar las respuestas del servidor DNS a las consultas.
+
+#### Resultados Esperados
+
+El servidor DNS debe resolver correctamente todas las consultas. Las respuestas deben incluir las direcciones IP correspondientes a cada dominio solicitado sin errores.
+## Prueba de Funcionamiento del Servidor Web
+### Descripción
+
+Asegurar que el servidor web permita la carga de imágenes y el acceso a estas mediante enlaces generados.
+#### Procedimiento
+
+    Paso 1: Desde un cliente (Cliente A), cargar una imagen al servidor utilizando la interfaz web proporcionada.
+    Paso 2: Acceder al enlace generado desde una máquina cliente diferente (Cliente B) y intentar visualizar o descargar la imagen.
+    Paso 3: Confirmar la accesibilidad y la correcta visualización de la imagen.
+
+#### Resultados Esperados
+
+La imagen debe ser accesible y visualizable desde cualquier cliente que utilice el enlace proporcionado. La carga y descarga deben completarse sin errores.
+## Comprobación de la Eliminación Automática de Imágenes
+### Descripción
+
+Verificar que el sistema elimine automáticamente las imágenes que excedan las 24 horas de permanencia en el servidor, conforme a la configuración de crontab.
+#### Procedimiento
+
+    Paso 1: Subir una imagen al directorio "uploads".
+    Paso 2: Esperar 24 horas y revisar el directorio para confirmar la eliminación de la imagen.
+
+    ```bash
+
+    ls /var/www/html/ImageLinx.lan/uploads
+    ```
+
+    Paso 3: Documentar la presencia inicial y la ausencia posterior de la imagen en el directorio.
+
+#### Resultados Esperados
+
+Las imágenes que superen las 24 horas de antigüedad en el directorio "uploads" deben ser eliminadas automáticamente. La automatización debe funcionar conforme al crontab establecido, sin intervención manual. 
+
+-*Si el servidor no está encendido en el momento a la hora que se debiera ejecutar el comando no borrará el contenido que lleve más de 24 horas en el directorio uploads hasta que se vuelva a ejecutar el comando.*
+
+-*El comando, tal y como está en esta guía, se ejecutará al comienzo de cada hora del día, según la hora del sistema. Se podrán modificar esos intervalos como se desee.*
+
+
+
+
+
 ## Recomendaciones Finales
 - Mantenimiento Regular: Realiza comprobaciones y actualizaciones regulares en todos los servidores para garantizar que el software esté actualizado y que no haya vulnerabilidades de seguridad.
 
