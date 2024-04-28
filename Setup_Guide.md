@@ -308,7 +308,7 @@ Ver código HTML
 
 
 **Imagen_de_fondo.webp - Imagen de fondo utilizada en la aplicación (opcional, elige tu propia imagen).**
-Asegúrate de colocar el archivo Imagen_de_fondo.webp en el mismo directorio.
+Asegúrate de colocar el archivo Imagen_de_fondo.webp en el mismo directorio. En este caso se utilizo el formato webp por su eficiencia a la hora de subir y descargar imágenes, pero se puede elegir el formato de imagen preferente.
 
 ### Automatización de la Gestión de Archivos
 Configura una tarea cron para eliminar automáticamente imágenes que han estado en el directorio de subidas por más de 24 horas:
