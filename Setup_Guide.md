@@ -306,6 +306,7 @@ Añade la siguiente línea para ejecutar la tarea cada hora, lo cual es más ade
 ```bash
 0 * * * * find /var/www/html/ImageLinx.lan/uploads -type f -mtime +1 -exec rm {} \;
 ```
+**Este comando se ejecuta al comienzo de cada hora del día ( 0 * * * * ) y comprueba qué archivos llevan más de 1 día en ese directorio (-mtime +1) para eliminar aquellos que sobrepasen ese periodo de estancia en el directorio uploads**
 
 *Para un entorno real se debería ajustar el tiempo de ejecución de la tarea, ya que sobrecargaría el servidor innecesariamente si está en funcionamiento contínuo. Por ejemplo poner una revisión cada 24 horas.*
 
