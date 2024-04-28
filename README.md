@@ -26,19 +26,15 @@ Esta sección te guiará a través de la configuración básica para que puedas 
 
 Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuración Detallada](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Setup_Guide.md), que te proporcionará todos los pasos necesarios.
 
-*Todas las indicaciones respecto a configuraciones de red muestran como se creó para en este proyecto. Las direcciones IP de los servidores, los rangos de IP dinámicas si se desea para una red interna, las distintas directivas que definen los servidores y todos los valores de configuración de red cada uno podrá adaptarlo a su caso particular.*
+*Todas las indicaciones respecto a configuraciones de red muestran como se creó para en este proyecto. Las direcciones IP de los servidores, los rangos de IP dinámicas si se desea para una red interna, las distintas directivas que definen los servidores y todos los valores de configuración de red y certificados se deberá adoptar a su caso particular.*
 
-**La única configuración que difiere del proyecto real es a la hora de generar el certificado SSL y la clave privada, por temas de privacidad:**
+##
 
-```bash
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/key_privada.key -out /etc/apache2/ssl/cert_apache.crt -subj "/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"
-```
-
-**Los campos:"/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"  deberán rellenarse con los datos propios que se quieran incluir.**
+Si se quiere profundizar más en el porqué de las configuraciones y el contenido del proyecto se puede consultar este [PDF](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Proyecto%20red%20de%20servidores%20para%20el%20intercambio%20seguro%20de%20im%C3%A1genes.pdf) donde se explica todo con mayor detalle
 
 ## Uso de la Plataforma
 
-Una vez instalado, podrás subir imágenes a través de una interfaz web intuitiva y obtener enlaces para su distribución. Para más detalles sobre cómo cargar y administrar tus imágenes, visita la sección de documentación.
+Una vez instalado, podrás subir imágenes a través de una interfaz web intuitiva y obtener enlaces para su distribución.
 
 ## Licencia
 
