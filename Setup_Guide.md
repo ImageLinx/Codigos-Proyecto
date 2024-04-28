@@ -411,11 +411,11 @@ sudo mkdir /etc/apache2/ssl
 Genera un certificado SSL autofirmado y una clave privada usando OpenSSL. Este certificado tendrá una validez de un año y empleará una clave RSA de 2048 bits:
 
 ```bash
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/key_privada.key -out /etc/apache2/ssl/cert_apache.crt -subj "/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/key_privada.key -out /etc/apache2/ssl/cert_apache.crt -subj "/C=ES/ST=Madrid/L=Madrid/O=ImageLinx.lan/OU=/CN=www.imagelinx.lan/emailAddress=ImageLinx@proton.me"
 
 ```
 
-**En este último comando para generar el certificado y la clave privada se deben completar los campos con los datos propios**
+**En este último comando para generar el certificado y la clave privada se deben completar los campos con los datos propios, ya que cada uno tendrá su propio correo y localización**
 
 ### Copia de Seguridad del Archivo de Configuración SSL
 Antes de realizar cambios en el archivo de configuración SSL, es una buena práctica realizar una copia de seguridad:
