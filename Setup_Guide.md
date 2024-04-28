@@ -582,12 +582,7 @@ Verificar que el sistema elimine automáticamente las imágenes que excedan las 
 
 Las imágenes que superen las 24 horas de antigüedad en el directorio "uploads" deben ser eliminadas automáticamente. La automatización debe funcionar conforme al crontab establecido, sin intervención manual. 
 
--*Si el servidor no está encendido en el momento a la hora que se debiera ejecutar el comando no borrará el contenido que lleve más de 24 horas en el directorio uploads hasta que se vuelva a ejecutar el comando.*
-
--*El comando, tal y como está en esta guía, se ejecutará al comienzo de cada hora del día, según la hora del sistema. Se podrán modificar esos intervalos como se desee.*
-
-
-
+-*Si el servidor no está encendido a la hora que se debiera ejecutar el comando, este no borrará el contenido que lleve más de 24 horas en el directorio uploads y habrá que esperar al comienzo de la siguiente hora. Esto en un entorno de producción no es un problema ya que habitualmente el servidor estará en marcha contínuamente, en un entorno de pruebas donde se está apagando y encendiendo el servidor, sí que habrá que tener esto en cuenta*
 
 
 ## Recomendaciones Finales
