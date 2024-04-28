@@ -30,7 +30,7 @@ Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuraci�
 
 ##
 
-Si se quiere profundizar más en el porqué de las configuraciones y el contenido del proyecto se puede consultar este [PDF](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Proyecto%20red%20de%20servidores%20para%20el%20intercambio%20seguro%20de%20im%C3%A1genes.pdf) donde se explica todo con mayor detalle
+Si se quiere profundizar más en el porqué de las configuraciones y el contenido del proyecto se puede consultar este [PDF](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Proyecto%20red%20de%20servidores%20para%20el%20intercambio%20seguro%20de%20im%C3%A1genes.pdf) donde se explica todo con mayor detalle. En la sección de Anexos del pdf encontrará capturas de pantalla de los pasos y resultados del proyecto.
 
 ## Uso de la Plataforma
 
