@@ -21,6 +21,14 @@ Antes de comenzar, necesitarás:
 
 Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuración Detallada](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/Setup_Guide.md), que te proporcionará todos los pasos necesarios.
 
+*Todas las indicaciones respecto a configuraciones de red muestran como se creo para en este proyecto. Las direcciones IP de los servidores, los rangos de IP dinámicas si se desea para una red interna, las distintas directivas que definen los servidores y todos los valores de configuración de red cada uno podrá adaptarlo a su caso particular.*
+
+**La única configuración que difiere del proyecto real es a la hora de generar el certificado SSL y la clave privada, por temas de privacidad:**
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/key_privada.key -out /etc/apache2/ssl/cert_apache.crt -subj "/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"
+
+**Los campos:"/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"  deberán rellenarse con los datos propios que se quieran incluir**
+
 ## Uso de la Plataforma
 
 Una vez instalado, podrás subir imágenes a través de una interfaz web intuitiva y obtener enlaces para su distribución. Para más detalles sobre cómo cargar y administrar tus imágenes, visita la sección de documentación.
