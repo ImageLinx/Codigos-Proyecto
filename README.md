@@ -35,7 +35,9 @@ Para instalar y configurar tu entorno ImageLinx, sigue la [Guía de Configuraci�
 
 **La única configuración que difiere del proyecto real es a la hora de generar el certificado SSL y la clave privada, por temas de privacidad:**
 
+```bash
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/key_privada.key -out /etc/apache2/ssl/cert_apache.crt -subj "/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"
+```
 
 **Los campos:"/C=(Código del país)/ST=(Estado o Provincia)/L=(Localidad)/O=(Nombre de la Organización)/OU=(Unidad Organizativa)/CN=(Nombre Común o dominio)/emailAddress=(Correo Electrónico)"  deberán rellenarse con los datos propios que se quieran incluir**
 
