@@ -12,7 +12,14 @@ Esta sección te guiará a través de la configuración básica para que puedas 
 
 Antes de comenzar, necesitarás:
 
-- Una instalación de Ubuntu Server, preferiblemente la versión 20.04 LTS.
+**
+
+### Recomendación para Implementación en Producción
+- **Ubuntu Server 20.04 LTS**: Aunque el desarrollo se realizó en Ubuntu de escritorio, para entornos de producción recomendamos Ubuntu Server 20.04 LTS por su estabilidad, seguridad y soporte extendido. Ubuntu Server es ideal para servidores, ya que está optimizado para rendimiento en entornos sin interfaz gráfica
+
+- Una instalación de Ubuntu 64 bits: Utilizado para el desarrollo y las pruebas de este proyecto. Esta versión de escritorio proporciona una interfaz gráfica de usuario y herramientas que facilitan la configuración y el desarrollo.
+  **opcional:**
+  - Ubuntu Server 20.04 LTS: Aunque el desarrollo se realizó en Ubuntu de escritorio, para entornos de producción recomendamos Ubuntu Server 20.04 LTS por su estabilidad, seguridad y soporte extendido. Ubuntu Server es ideal para servidores, ya que está optimizado para rendimiento en entornos sin interfaz gráfica.
 - VirtualBox instalado si planeas usar entornos virtuales.
 - Conexión a internet para la instalación y configuración.
 - Privilegios de administrador en tu servidor.
