@@ -262,7 +262,7 @@ sudo mkdir -p /var/www/html/ImageLinx.lan
 ```
 
 ### Establecimiento de Permisos
-Configura los permisos del directorio para asegurar que el servidor web tenga los permisos adecuados para servir y gestionar los archivos correctamente. Es importante que el servidor tenga permisos de lectura sobre los archivos HTML, CSS y PHP, y permisos de escritura en el directorio uploads para que los usuarios puedan subir archivos:
+Configura los permisos del directorio para asegurar que el servidor web tenga los permisos adecuados para servir y gestionar los archivos correctamente. Es importante que el servidor tenga permisos de lectura sobre los archivos HTML, CSS, Javascript y PHP, y permisos de escritura en el directorio uploads para que los usuarios puedan subir archivos:
 
 ```bash
 sudo chown -R www-data:www-data /var/www/html/ImageLinx.lan
@@ -310,6 +310,9 @@ Ver código HTML
 
 **hoja_estilos.css - Contiene los estilos visuales para la aplicación.**
 [Ver código CSS](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/hoja_estilos.css)
+
+**script.js - Mejora la interactividad de la aplicación web** 
+[Ver código Javascript](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/script.js)
 
 **funcionalidades.php - Encargado del procesamiento del lado del servidor.**
 [Ver código PHP](https://github.com/ImageLinx/ImageLinxPhotoSwap/blob/main/src/funcionalidades.php)
