@@ -349,8 +349,8 @@ upload_max_filesize = 34M
 post_max_size = 35M
 ```
 
-    upload_max_filesize controla el tamaño máximo de un archivo individual que puede ser cargado.
-    post_max_size controla el tamaño máximo de todos los datos enviados a través del método POST.
+- upload_max_filesize controla el tamaño máximo de un archivo individual que puede ser cargado.
+- post_max_size controla el tamaño máximo de todos los datos enviados a través del método POST.
 
 Ajusta estos valores a 34M y 35M respectivamente, o según lo que mejor se ajuste a las necesidades de tu aplicación web.
 
