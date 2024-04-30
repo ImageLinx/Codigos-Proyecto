@@ -321,6 +321,59 @@ Ver código HTML
 **Imagen_de_fondo.webp - Imagen de fondo utilizada en la aplicación (opcional, elige tu propia imagen).**
 Asegúrate de colocar el archivo Imagen_de_fondo.webp en el mismo directorio. En este caso se utilizo el formato webp por su eficiencia a la hora de subir y descargar imágenes, pero se puede elegir el formato de imagen preferente.
 
+## Configuración del Archivo php.ini para el Servidor PHP
+
+### Descripción
+El archivo `php.ini` es esencial para configurar el comportamiento de PHP en tu servidor. Ajustar el tamaño máximo de carga de archivos y el tamaño máximo de los datos POST asegura que el servidor maneje las solicitudes de manera eficiente y segura, evitando la sobrecarga y optimizando el rendimiento para las operaciones de carga de archivos.
+
+### Pasos para Configurar php.ini
+
+#### Paso 1: Acceder al Archivo php.ini
+Localiza y abre el archivo `php.ini` utilizado por tu instalación de PHP. Este archivo suele encontrarse en:
+
+```bash
+/etc/php/[version]/apache2/php.ini
+```
+Donde [version] representa la versión de PHP instalada en tu servidor. Utiliza el editor de texto para abrir el archivo:
+
+```bash
+sudo nano /etc/php/[version]/apache2/php.ini
+```
+
+#### Paso 2: Modificar los Valores de Configuración
+
+En el archivo php.ini, busca las siguientes líneas relacionadas con el tamaño de carga de archivos y los datos POST. Es posible que debas descomentar estas líneas eliminando el ; inicial si están comentadas:
+
+```ini
+upload_max_filesize = 34M
+post_max_size = 35M
+```
+
+    upload_max_filesize controla el tamaño máximo de un archivo individual que puede ser cargado.
+    post_max_size controla el tamaño máximo de todos los datos enviados a través del método POST.
+
+Ajusta estos valores a 34M y 35M respectivamente, o según lo que mejor se ajuste a las necesidades de tu aplicación web.
+
+#### Paso 3: Guardar y Cerrar el Archivo
+
+Después de realizar los cambios necesarios, guarda el archivo y cierra el editor. Si estás utilizando nano, puedes hacerlo presionando CTRL+X para cerrar, luego Y para confirmar los cambios y Enter para guardar.
+#### Paso 4: Reiniciar el Servidor Web
+
+Para que los cambios en php.ini tengan efecto, es necesario reiniciar el servidor web. Si estás utilizando Apache, puedes reiniciar el servicio con el siguiente comando:
+
+```bash
+sudo systemctl restart apache2
+```
+
+#### Importancia de la Configuración de php.ini
+
+Configurar adecuadamente el archivo php.ini es vital por varias razones:
+
+    Seguridad: Limitar el tamaño de los archivos cargados ayuda a prevenir ataques de denegación de servicio (DoS) y reduce el riesgo de que scripts maliciosos sean cargados en el servidor.
+    Estabilidad del Servidor: Evitar que se suban archivos excesivamente grandes protege al servidor de sobrecargas y caídas inesperadas, garantizando una mejor experiencia de usuario.
+    Control de Recursos: Ayuda a administrar el uso de los recursos del servidor, asegurando que no se consuman más recursos de los necesarios.
+
+
 ### Automatización de la Gestión de Archivos
 Configura una tarea cron para eliminar automáticamente imágenes que han estado en el directorio de subidas por más de 24 horas:
 
