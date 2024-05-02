@@ -604,15 +604,15 @@ Comprobar la capacidad del servidor DNS para resolver nombres de dominio tanto i
 
     ```bash
 
-    dig www.example.com
-    dig google.com
+    dig @IP_ServidorDNS www.example.com
+    dig @IP_ServidorDNS google.com
     ```
 
     Paso 2: Observar las respuestas del servidor DNS a las consultas.
 
 #### Resultados Esperados
 
-El servidor DNS debe resolver correctamente todas las consultas. Las respuestas deben incluir las direcciones IP correspondientes a cada dominio solicitado sin errores.
+El servidor DNS debe resolver correctamente todas las consultas. Las respuestas deben incluir las direcciones IP correspondientes a cada dominio solicitado sin errores. Debe mostrarse que se está utilizando el servidor DNS configurado, en este caso con la IP 192.168.1.199.
 ## Prueba de Funcionamiento del Servidor Web
 ### Descripción
 
