@@ -188,16 +188,17 @@ Incluye lo siguiente, asegurándote de incrementar el número de serie en una un
 ```plaintext
 $TTL    604800
 $ORIGIN ImageLinx.lan.
-@  	 IN 	 SOA     ImageLinx.lan. ImageLinx.proton.me. (
-                     		 3		 ; Serial
+@  	 IN 	 SOA     ns1.ImageLinx.lan. ImageLinx.proton.me. (
+                     		 2		 ; Serial
                 		 604800		 ; Refresh
                  		 86400		 ; Retry
-               		 2419200		 ; Expire
+               		 	2419200		 ; Expire
                 		 604800 )  	 ; Negative Cache TTL
 ;
-@  	 IN 	 NS 	 ImageLinx.lan.
-@  	 IN 	 A  	 192.168.1.191
-www     IN 	 A  	 192.168.1.191
+@  	IN 	NS 	ns1.ImageLinx.lan.
+ns1  	IN 	A  	192.168.1.199
+www     IN 	A  	192.168.1.191
+@	IN	A	192.168.1.191
 ```
 ### Edita el archivo de zona inversa:
 
@@ -209,16 +210,16 @@ Incluye lo siguiente, recordando actualizar el número de serie como antes:
 ```plaintext
 $TTL    604800
 $ORIGIN 1.168.192.in-addr.arpa.
-@  	 IN 	 SOA     ImageLinx.lan. ImageLinx.proton.me. (
+@  	 IN 	 SOA     ns1.ImageLinx.lan. ImageLinx.proton.me. (
                      		 2		 ; Serial
                 		 604800		 ; Refresh
                  		 86400		 ; Retry
-               		 2419200		 ; Expire
+               		 	 2419200	 ; Expire
                 		 604800 )  	 ; Negative Cache TTL
 ;
-@  	 IN 	 NS 	 ImageLinx.lan.
-
-191     IN 	 PTR     www.ImageLinx.lan.
+@	IN 	NS	ns1.ImageLinx.lan.
+199	IN 	PTR	ns1.ImageLinx.lan.
+191	IN 	PTR	www.ImageLinx.lan.
 ```
 ### Iniciar y Habilitar BIND9
 
